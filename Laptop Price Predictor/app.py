@@ -4,8 +4,8 @@ import numpy as np
 import pickle
 
 # Load the saved model and column structure
-model = pickle.load(open('laptop_model.pkl', 'rb'))
-model_columns = pickle.load(open('columns.pkl', 'rb'))
+model = pickle.load(open('Laptop Price Predictor/laptop_model.pkl', 'rb'))
+model_columns = pickle.load(open('Laptop Price Predictor/columns.pkl', 'rb'))
 
 st.title("💻 Laptop Price Predictor")
 st.write("Enter the specifications to get the estimated price.")
@@ -47,3 +47,4 @@ if st.button("Predict Price"):
     prediction = model.predict(input_data*108.62)[0]
     
     st.success(f"The estimated price for this laptop is: {round(prediction, 2)}INR")
+
